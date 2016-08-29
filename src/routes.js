@@ -6,7 +6,7 @@ import { App, Chat, Home, Widgets, About, Login, LoginSuccess, Survey, NotFound 
 export default (store) => {
   function checkAuth(logged, replace, cb) {
     const { auth: { user } } = store.getState();
-    if (!!user === !logged) replace('/');
+    if (!!user === !logged) replace('/login');
     cb();
   }
 
