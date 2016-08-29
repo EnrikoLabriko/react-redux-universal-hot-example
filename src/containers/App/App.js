@@ -109,7 +109,7 @@ export default class App extends Component {
             </p>}
             <Nav navbar pullRight>
               <NavItem
-                eventKey={1} target="_blank" title="View on Github"
+                eventKey={1} target="_blank" rel="noopener noreferrer" title="View on Github"
                 href="https://github.com/erikras/react-redux-universal-hot-example">
                 <i className="fa fa-github" />
               </NavItem>
@@ -132,9 +132,13 @@ export default class App extends Component {
 
         <div className="well text-center">
           Have questions? Ask for help{' '}
-          <a href="https://github.com/erikras/react-redux-universal-hot-example/issues" target="_blank">on Github</a>
+          <a
+            href="https://github.com/erikras/react-redux-universal-hot-example/issues"
+            target="_blank" rel="noopener noreferrer">on Github</a>
           {' '}or in the{' '}
-          <a href="https://discord.gg/0ZcbPKXt5bZZb1Ko" target="_blank">#react-redux-universal</a>
+          <a
+            href="https://discord.gg/0ZcbPKXt5bZZb1Ko"
+            target="_blank" rel="noopener noreferrer">#react-redux-universal</a>
           {' '}Discord channel.
         </div>
       </div>
