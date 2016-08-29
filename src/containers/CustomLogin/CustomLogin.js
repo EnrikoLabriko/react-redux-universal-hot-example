@@ -27,14 +27,15 @@ export default class CustomLogin extends Component {
     });
 
   render() {
+    const styles = require('./Login.scss');
     const { user, logout } = this.props;
     return (
-      <div className="container">
+      <div className={`${styles.loginContainer} col-sm-4 col-sm-offset-4 container`}>
         <Helmet title="CustomLogin" />
-        <h1>CustomLogin</h1>
+        <h1 className="text-center">Авторизация</h1>
         {!user && <div>
           <LoginForm onSubmit={this.login} />
-          <p>This will "log you in" as this user, storing the username in the session of the API server.</p>
+          <br />
         </div>
         }
         {user && <div>
