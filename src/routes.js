@@ -1,7 +1,7 @@
 import React from 'react';
 import { IndexRoute, Route } from 'react-router';
 import { isLoaded as isAuthLoaded, load as loadAuth } from 'redux/modules/auth';
-import { App, Chat, Home, Widgets, About, Login, LoginSuccess, Survey, NotFound } from 'containers';
+import { App, Chat, CustomLogin, Home, Widgets, About, Login, LoginSuccess, Survey, NotFound } from 'containers';
 
 export default (store) => {
   function checkAuth(logged, replace, cb) {
@@ -46,6 +46,7 @@ export default (store) => {
       </Route>
 
       {/* Routes */}
+      <Route path="custom-login" component={CustomLogin} />
       <Route path="login" component={Login} />
       <Route path="about" component={About} />
       <Route path="survey" component={Survey} />
