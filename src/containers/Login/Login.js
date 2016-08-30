@@ -14,7 +14,7 @@ export default class Login extends Component {
     login: PropTypes.func,
     logout: PropTypes.func,
     notifSend: PropTypes.func
-  }
+  };
 
   login = data => this.props.login(data)
     .then(result => {
