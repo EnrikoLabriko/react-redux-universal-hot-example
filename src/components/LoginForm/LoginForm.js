@@ -18,6 +18,7 @@ export default class LoginForm extends Component {
       handleSubmit,
       error
     } = this.props;
+
     const renderInput = (field, label, type = 'text') =>
       <div className={`form-group ${field.error && field.touched ? 'has-error' : ''}`}>
         <div className="row">
