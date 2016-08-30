@@ -2,10 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { IndexLink } from 'react-router';
 import { LinkContainer } from 'react-router-bootstrap';
-import Navbar from 'react-bootstrap/lib/Navbar';
-import Nav from 'react-bootstrap/lib/Nav';
-import NavItem from 'react-bootstrap/lib/NavItem';
-import Alert from 'react-bootstrap/lib/Alert';
+import { Navbar, Nav, NavItem, Alert } from 'react-bootstrap';
 import Helmet from 'react-helmet';
 import { isLoaded as isInfoLoaded, load as loadInfo } from 'redux/modules/info';
 import { isLoaded as isAuthLoaded, load as loadAuth, logout } from 'redux/modules/auth';
@@ -99,11 +96,11 @@ export default class App extends Component {
                 <NavItem eventKey={5}>Login</NavItem>
               </LinkContainer>}
               {!user && <LinkContainer to="/custom-login">
-                <NavItem eventKey={6}>Custom login</NavItem>
+                <NavItem eventKey={6}>Войти</NavItem>
               </LinkContainer>}
               {user && <LinkContainer to="/logout">
                 <NavItem eventKey={7} className="logout-link" onClick={this.handleLogout}>
-                  Logout
+                  Выйти
                 </NavItem>
               </LinkContainer>}
             </Nav>
