@@ -18,6 +18,14 @@
   }
 }
 
+.nav {
+  background-color: #3c3c3c;
+
+  li a {
+    color: #fff;
+  }
+}
+
 .appContent {
   margin: 50px 0; // for fixed navbar
   position: relative;

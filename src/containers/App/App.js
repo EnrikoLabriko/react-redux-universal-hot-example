@@ -68,7 +68,7 @@ export default class App extends Component {
     return (
       <div className={styles.app}>
         <Helmet {...config.app.head} />
-        <Navbar fixedTop>
+        <Navbar className={styles.nav} inverse fixedTop>
           <Navbar.Header>
             <Navbar.Brand>
               <IndexLink to="/" activeStyle={{ color: '#33e0ff' }}>
@@ -80,7 +80,7 @@ export default class App extends Component {
           </Navbar.Header>
 
           <Navbar.Collapse eventKey={0}>
-            <Nav navbar>
+            <Nav navbar pullRight>
               {user && <LinkContainer to="/chat">
                 <NavItem eventKey={1}>Chat</NavItem>
               </LinkContainer>}
@@ -110,13 +110,9 @@ export default class App extends Component {
             {user && <p className={`${styles.loggedInMessage} navbar-text`}>
               Logged in as <strong>{user.email}</strong>.
             </p>}
-            <Nav navbar pullRight>
-              <NavItem
-                eventKey={1} target="_blank" rel="noopener noreferrer" title="View on Github"
-                href="https://github.com/erikras/react-redux-universal-hot-example">
-                <i className="fa fa-github" />
-              </NavItem>
-            </Nav>
+            {/*
+              <Nav navbar pullRight></Nav>
+             */}
           </Navbar.Collapse>
         </Navbar>
 
