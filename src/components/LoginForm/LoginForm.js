@@ -39,7 +39,7 @@ export default class LoginForm extends Component {
 
     return (
       <form className="form-horizontal" onSubmit={handleSubmit}>
-        {renderInput(email, 'Эл. почта')}
+        {renderInput(email, 'Электронная почта')}
         {renderInput(password, 'Пароль', 'password')}
         {error && <p className={`text-danger ${styles.textDanger}`}><strong>{error}</strong></p>}
         <button className="btn btn-success center-block" type="submit">
