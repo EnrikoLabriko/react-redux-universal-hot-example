@@ -33,7 +33,7 @@ export default class CustomLogin extends Component {
       <div className="container">
         <Helmet title="CustomLogin" />
         <div className={`${styles.loginContainer} col-sm-4 col-sm-offset-4`}>
-          <h1 className="text-center">Авторизация</h1>
+          <h2 className="text-center">Авторизация</h2>
           <br />
           {!user && <div>
             <LoginForm onSubmit={this.login} />

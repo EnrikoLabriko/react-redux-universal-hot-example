@@ -28,9 +28,9 @@ export default class LoginForm extends Component {
 
     const renderInput = (field, label, type = 'text') =>
       <div className={`form-group ${field.error && field.touched ? 'has-error' : ''}`}>
-        <div htmlFor={field.name} className={`col-sm-3 text-right ${styles.controlLabel}`}>{label}</div>
-        <div className={`col-sm-9 right-block ${styles.inputFormContainer}`}>
-          <input type={type} className="form-control" name={field.name} {...field} />
+        <label htmlFor={field.name} className={`col-sm-12 text-left ${styles.controlLabel}`}>{label}</label>
+        <div className={`col-sm-12 right-block ${styles.inputFormContainer}`}>
+          <input type={type} className="form-control" id={field.name} name={field.name} {...field} />
           {field.error && field.touched && <span className="glyphicon glyphicon-remove form-control-feedback"></span>}
           {field.error && field.touched &&
             <div className={`text-danger ${styles.textDanger}`}><strong>{field.error}</strong></div>}
@@ -47,41 +47,5 @@ export default class LoginForm extends Component {
         </button>
       </form>
     );
-
-    // return (
-    //   <Form horizontal onSubmit={handleSubmit}>
-    //     <FormGroup controlId="formHorizontalEmail">
-    //       <Col className={styles.controlLabel} sm={2}>
-    //         Email
-    //       </Col>
-    //       <Col sm={10}>
-    //         <FormControl type="email" placeholder="Email" />
-    //       </Col>
-    //     </FormGroup>
-    //
-    //     <FormGroup controlId="formHorizontalPassword">
-    //       <Col className={styles.controlLabel} sm={2}>
-    //         Password
-    //       </Col>
-    //       <Col sm={10}>
-    //         <FormControl type="password" placeholder="Password" />
-    //       </Col>
-    //     </FormGroup>
-    //
-    //     <FormGroup>
-    //       <Col smOffset={2} sm={10}>
-    //         <Checkbox>Remember me</Checkbox>
-    //       </Col>
-    //     </FormGroup>
-    //
-    //     <FormGroup>
-    //       <Col smOffset={2} sm={10}>
-    //         <Button type="submit">
-    //           Sign in
-    //         </Button>
-    //       </Col>
-    //     </FormGroup>
-    //   </Form>
-    // );
   }
 }

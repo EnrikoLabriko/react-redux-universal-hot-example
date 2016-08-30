@@ -127,16 +127,8 @@ export default class App extends Component {
         </div>
         {/* <InfoBar /> */}
 
-        <div className="navbar-fixed-bottom well text-center" style={{ marginBottom: '0' }}>
-          Have questions? Ask for help{' '}
-          <a
-            href="https://github.com/erikras/react-redux-universal-hot-example/issues"
-            target="_blank" rel="noopener noreferrer">on Github</a>
-          {' '}or in the{' '}
-          <a
-            href="https://discord.gg/0ZcbPKXt5bZZb1Ko"
-            target="_blank" rel="noopener noreferrer">#react-redux-universal</a>
-          {' '}Discord channel.
+        <div className="navbar-fixed-bottom well text-left" style={{ marginBottom: '0' }}>
+          © 2016 Центр недвижимости от Сбербанка
         </div>
       </div>
     );
