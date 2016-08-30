@@ -32,7 +32,8 @@ export default class LoginForm extends Component {
         <div className={`col-sm-9 right-block ${styles.inputFormContainer}`}>
           <input type={type} className="form-control" name={field.name} {...field} />
           {field.error && field.touched && <span className="glyphicon glyphicon-remove form-control-feedback"></span>}
-          {field.error && field.touched && <div className="text-danger"><strong>{field.error}</strong></div>}
+          {field.error && field.touched &&
+            <div className={`text-danger ${styles.textDanger}`}><strong>{field.error}</strong></div>}
         </div>
       </div>;
 

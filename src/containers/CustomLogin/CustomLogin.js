@@ -31,8 +31,8 @@ export default class CustomLogin extends Component {
     const { user, logout } = this.props;
     return (
       <div className="container">
+        <Helmet title="CustomLogin" />
         <div className={`${styles.loginContainer} col-sm-4 col-sm-offset-4`}>
-          <Helmet title="CustomLogin" />
           <h1 className="text-center">Авторизация</h1>
           <br />
           {!user && <div>
