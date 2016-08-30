@@ -74,6 +74,11 @@ var webpackConfig = module.exports = {
         loader: 'style!css?modules&importLoaders=2&sourceMap&localIdentName=[local]___[hash:base64:5]!autoprefixer?browsers=last 2 version!less?outputStyle=expanded&sourceMap',
       }),
       helpers.createSourceLoader({
+        happy: { id: 'stylus' },
+        test: /\.styl/,
+        loader: 'style!css?modules&importLoaders=2&sourceMap&localIdentName=[local]___[hash:base64:5]!autoprefixer?browsers=last 2 version!stylus?outputStyle=expanded&sourceMap',
+      }),
+      helpers.createSourceLoader({
         happy: { id: 'sass' },
         test: /\.scss$/,
         loader: 'style!css?modules&importLoaders=2&sourceMap&localIdentName=[local]___[hash:base64:5]!autoprefixer?browsers=last 2 version!sass?outputStyle=expanded&sourceMap',
@@ -110,6 +115,7 @@ var webpackConfig = module.exports = {
     helpers.createHappyPlugin('json'),
     helpers.createHappyPlugin('less'),
     helpers.createHappyPlugin('sass'),
+    helpers.createHappyPlugin('stylus'),
   ]
 };
 

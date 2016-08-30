@@ -127,7 +127,7 @@ export default class App extends Component {
         </div>
         {/* <InfoBar /> */}
 
-        <div className="footer well text-center">
+        <div className="navbar-fixed-bottom well text-center" style={{ marginBottom: '0' }}>
           Have questions? Ask for help{' '}
           <a
             href="https://github.com/erikras/react-redux-universal-hot-example/issues"
