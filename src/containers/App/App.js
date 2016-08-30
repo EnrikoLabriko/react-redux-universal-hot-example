@@ -2,14 +2,12 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { IndexLink } from 'react-router';
 import { LinkContainer } from 'react-router-bootstrap';
-import Navbar from 'react-bootstrap/lib/Navbar';
-import Nav from 'react-bootstrap/lib/Nav';
-import NavItem from 'react-bootstrap/lib/NavItem';
-import Alert from 'react-bootstrap/lib/Alert';
+import { Navbar, Nav, NavItem, Alert } from 'react-bootstrap';
 import Helmet from 'react-helmet';
 import { isLoaded as isInfoLoaded, load as loadInfo } from 'redux/modules/info';
 import { isLoaded as isAuthLoaded, load as loadAuth, logout } from 'redux/modules/auth';
-import { Notifs, InfoBar } from 'components';
+import { Notifs } from 'components';
+// import { InfoBar } from 'components';
 import { push } from 'react-router-redux';
 import config from 'config';
 import { asyncConnect } from 'redux-connect';
@@ -68,7 +66,7 @@ export default class App extends Component {
     return (
       <div className={styles.app}>
         <Helmet {...config.app.head} />
-        <Navbar fixedTop>
+        <Navbar className={styles.nav} inverse fixedTop>
           <Navbar.Header>
             <Navbar.Brand>
               <IndexLink to="/" activeStyle={{ color: '#33e0ff' }}>
@@ -80,7 +78,7 @@ export default class App extends Component {
           </Navbar.Header>
 
           <Navbar.Collapse eventKey={0}>
-            <Nav navbar>
+            <Nav navbar pullRight>
               {user && <LinkContainer to="/chat">
                 <NavItem eventKey={1}>Chat</NavItem>
               </LinkContainer>}
@@ -94,29 +92,21 @@ export default class App extends Component {
               <LinkContainer to="/about">
                 <NavItem eventKey={4}>About Us</NavItem>
               </LinkContainer>
-
               {!user && <LinkContainer to="/login">
-                <NavItem eventKey={5}>Login</NavItem>
-              </LinkContainer>}
-              {!user && <LinkContainer to="/custom-login">
-                <NavItem eventKey={6}>Custom login</NavItem>
+                <NavItem eventKey={5}>Войти</NavItem>
               </LinkContainer>}
               {user && <LinkContainer to="/logout">
                 <NavItem eventKey={7} className="logout-link" onClick={this.handleLogout}>
-                  Logout
+                  Выйти
                 </NavItem>
               </LinkContainer>}
             </Nav>
             {user && <p className={`${styles.loggedInMessage} navbar-text`}>
               Logged in as <strong>{user.email}</strong>.
             </p>}
-            <Nav navbar pullRight>
-              <NavItem
-                eventKey={1} target="_blank" rel="noopener noreferrer" title="View on Github"
-                href="https://github.com/erikras/react-redux-universal-hot-example">
-                <i className="fa fa-github" />
-              </NavItem>
-            </Nav>
+            {/*
+              <Nav navbar pullRight></Nav>
+             */}
           </Navbar.Collapse>
         </Navbar>
 
@@ -131,18 +121,10 @@ export default class App extends Component {
 
           {this.props.children}
         </div>
-        <InfoBar />
+        {/* <InfoBar /> */}
 
-        <div className="well text-center">
-          Have questions? Ask for help{' '}
-          <a
-            href="https://github.com/erikras/react-redux-universal-hot-example/issues"
-            target="_blank" rel="noopener noreferrer">on Github</a>
-          {' '}or in the{' '}
-          <a
-            href="https://discord.gg/0ZcbPKXt5bZZb1Ko"
-            target="_blank" rel="noopener noreferrer">#react-redux-universal</a>
-          {' '}Discord channel.
+        <div className="navbar-fixed-bottom well text-left" style={{ marginBottom: '0' }}>
+          © 2016 Центр недвижимости от Сбербанка
         </div>
       </div>
     );
