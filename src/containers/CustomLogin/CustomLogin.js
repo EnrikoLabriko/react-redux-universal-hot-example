@@ -30,22 +30,24 @@ export default class CustomLogin extends Component {
     const styles = require('./Login.scss');
     const { user, logout } = this.props;
     return (
-      <div className={`${styles.loginContainer} col-sm-4 col-sm-offset-4 container`}>
-        <Helmet title="CustomLogin" />
-        <h1 className="text-center">Авторизация</h1>
-        {!user && <div>
-          <LoginForm onSubmit={this.login} />
-          <br />
-        </div>
-        }
-        {user && <div>
-          <p>You are currently logged in as {user.email}.</p>
-
-          <div>
-            <button className="btn btn-danger" onClick={logout}><i className="fa fa-sign-out" />{' '}Log Out</button>
+      <div className="container">
+        <div className={`${styles.loginContainer} col-sm-4 col-sm-offset-4`}>
+          <Helmet title="CustomLogin" />
+          <h1 className="text-center">Авторизация</h1>
+          {!user && <div>
+            <LoginForm onSubmit={this.login} />
+            <br />
           </div>
+          }
+          {user && <div>
+            <p>You are currently logged in as {user.email}.</p>
+
+            <div>
+              <button className="btn btn-danger" onClick={logout}><i className="fa fa-sign-out" />{' '}Log Out</button>
+            </div>
+          </div>
+          }
         </div>
-        }
       </div>
     );
   }

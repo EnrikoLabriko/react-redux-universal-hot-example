@@ -129,7 +129,7 @@ export default class App extends Component {
         </div>
         <InfoBar />
 
-        <div className="well text-center">
+        <div className="footer well text-center">
           Have questions? Ask for help{' '}
           <a
             href="https://github.com/erikras/react-redux-universal-hot-example/issues"
