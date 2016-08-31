@@ -19,7 +19,7 @@ export default class LoginForm extends Component {
   };
 
   render() {
-    const styles = require('./LoginForm.scss');
+    const styles = require('./LoginForm.styl');
     const {
       fields: { email, password },
       handleSubmit,

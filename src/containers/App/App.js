@@ -6,7 +6,7 @@ import { Navbar, Nav, NavItem, Alert } from 'react-bootstrap';
 import Helmet from 'react-helmet';
 import { isLoaded as isInfoLoaded, load as loadInfo } from 'redux/modules/info';
 import { isLoaded as isAuthLoaded, load as loadAuth, logout } from 'redux/modules/auth';
-import { Notifs } from 'components';
+import { Notifs, Footer } from 'components';
 // import { InfoBar } from 'components';
 import { push } from 'react-router-redux';
 import config from 'config';
@@ -62,6 +62,8 @@ export default class App extends Component {
   render() {
     const { user, notifs } = this.props;
     const styles = require('./App.scss');
+
+    debugger;
 
     return (
       <div className={styles.app}>
@@ -123,9 +125,7 @@ export default class App extends Component {
         </div>
         {/* <InfoBar /> */}
 
-        <div className="navbar-fixed-bottom text-left" style={{ padding: '10px', color: '#fff' }}>
-          © 2016 Центр недвижимости от Сбербанка
-        </div>
+        <Footer>© 2016 Центр недвижимости от Сбербанка</Footer>
       </div>
     );
   }
