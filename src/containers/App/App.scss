@@ -24,6 +24,7 @@
 }
 
 .app {
+  height: 100vh;
 
   .brand {
     position: absolute;
@@ -53,8 +54,10 @@
 }
 
 .appContent {
-  margin: 50px 0; // for fixed navbar
+  //margin: 50px 0; // for fixed navbar
+  top: 50px;
   position: relative;
+  //min-height: 100%;
 }
 
 .notifs {
