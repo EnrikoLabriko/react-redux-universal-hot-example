@@ -27,24 +27,28 @@ export default class Login extends Component {
     });
 
   render() {
+    const styles = require('./Login.scss');
     const { user, logout } = this.props;
     return (
       <div className="container">
         <Helmet title="Login" />
-        <h1>Login</h1>
-        {!user && <div>
-          <LoginForm onSubmit={this.login} />
-          <p>This will "log you in" as this user, storing the username in the session of the API server.</p>
-        </div>
-        }
-        {user && <div>
-          <p>You are currently logged in as {user.email}.</p>
-
-          <div>
-            <button className="btn btn-danger" onClick={logout}><i className="fa fa-sign-out" />{' '}Log Out</button>
+        <div className={`${styles.loginContainer} col-sm-4 col-sm-offset-4`}>
+          <h2 className="text-center">Авторизация</h2>
+          <br />
+          {!user && <div>
+            <LoginForm onSubmit={this.login} />
+            <br />
           </div>
+          }
+          {user && <div>
+            <p>You are currently logged in as {user.email}.</p>
+
+            <div>
+              <button className="btn btn-danger" onClick={logout}><i className="fa fa-sign-out" />{' '}Log Out</button>
+            </div>
+          </div>
+          }
         </div>
-        }
       </div>
     );
   }
