@@ -5,7 +5,7 @@ import loginValidation from './loginValidation';
 // import Form from 'react-bootstrap/lib/Form';
 // import FormGroup from 'react-bootstrap/lib/FormGroup';
 // import FormControl from 'react-bootstrap/lib/FormControl';
-// import Button from 'react-bootstrap/lib/Button';
+import Button from 'react-bootstrap/lib/Button';
 // import Checkbox from 'react-bootstrap/lib/Checkbox';
 
 @reduxForm({
@@ -42,9 +42,9 @@ export default class LoginForm extends Component {
         {renderInput(email, 'Электронная почта')}
         {renderInput(password, 'Пароль', 'password')}
         {error && <p className={`text-danger ${styles.textDanger}`}><strong>{error}</strong></p>}
-        <button className="btn btn-success center-block" type="submit">
-          <i className="fa fa-sign-in" />{' '}Войти
-        </button>
+        <Button className="btn btn-success center-block" block type="submit">
+          {/* <i className="fa fa-sign-in" /> */}{' '}Войти
+        </Button>
       </form>
     );
   }
