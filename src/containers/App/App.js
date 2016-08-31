@@ -123,7 +123,7 @@ export default class App extends Component {
         </div>
         {/* <InfoBar /> */}
 
-        <div className="navbar-fixed-bottom well text-left" style={{ marginBottom: '0' }}>
+        <div className="navbar-fixed-bottom text-left" style={{ padding: '10px', color: '#fff' }}>
           © 2016 Центр недвижимости от Сбербанка
         </div>
       </div>

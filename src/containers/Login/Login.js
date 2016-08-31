@@ -30,9 +30,9 @@ export default class Login extends Component {
     const styles = require('./Login.scss');
     const { user, logout } = this.props;
     return (
-      <div className="container">
-        <Helmet title="Login" />
-        <div className={`${styles.loginContainer} col-sm-4 col-sm-offset-4`}>
+      <div className={styles.loginContainer}>
+        <div className={`${styles.loginFormContainer} col-sm-3 center-block`}>
+          <Helmet title="Login" />
           <h2 className="text-center">Авторизация</h2>
           <br />
           {!user && <div>
