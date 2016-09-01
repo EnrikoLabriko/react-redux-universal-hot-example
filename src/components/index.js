@@ -7,6 +7,7 @@
 
 export Footer from './Footer/Footer';
 export LoginForm from './LoginForm/LoginForm';
+export Noname from './Noname/Noname';
 export Notifs from './Notifs/Notifs';
 export CounterButton from './CounterButton/CounterButton';
 export GithubButton from './GithubButton/GithubButton';
